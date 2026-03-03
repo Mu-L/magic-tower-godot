@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://dndbje4pjqtaf"]
+[gd_scene load_steps=22 format=4 uid="uid://dndbje4pjqtaf"]
 
 [ext_resource type="Texture2D" uid="uid://dumvxbchhtl0g" path="res://images/ground.png" id="1_61f8s"]
 [ext_resource type="Script" uid="uid://c0pbp065dkbvr" path="res://hud.gd" id="1_script"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://e20nk5q6okvx" path="res://images/save.png" id="13_2d608"]
 [ext_resource type="Texture2D" uid="uid://cdtelv2cgxwie" path="res://images/load.png" id="13_pw7dr"]
 [ext_resource type="Texture2D" uid="uid://csmkb1go11fat" path="res://images/settings.png" id="14_ap7yk"]
+[ext_resource type="PackedScene" uid="uid://1lllgxbv2aly" path="res://npc/ui/virtual_controls.tscn" id="15_virtual"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w71nf"]
 texture = ExtResource("1_61f8s")
@@ -183,6 +184,8 @@ texture_normal = ExtResource("13_pw7dr")
 [node name="btn_setting" type="TextureButton" parent="Control/VBoxContainer/HBoxContainer10"]
 layout_mode = 2
 texture_normal = ExtResource("14_ap7yk")
+
+[node name="VirtualControls" parent="." instance=ExtResource("15_virtual")]
 
 [connection signal="pressed" from="Control/VBoxContainer/HBoxContainer9/btn_book" to="." method="_on_btn_book_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/HBoxContainer9/btn_fly" to="." method="_on_btn_fly_pressed"]

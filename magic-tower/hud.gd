@@ -15,6 +15,12 @@ func _ready():
 	# 确保 HUD 在最底层，或者通过 CanvasLayer 的 layer 属性控制
 	layer = 100 
 	
+	## 添加虚拟按键
+	#var virtual_controls_scene = load("res://npc/ui/virtual_controls.tscn")
+	#if virtual_controls_scene:
+		#var virtual_controls = virtual_controls_scene.instantiate()
+		#add_child(virtual_controls)
+	
 func _process(_delta):
 	# 动态调整当前场景的位置，使其不被 HUD 遮挡
 	var current_scene = get_tree().current_scene

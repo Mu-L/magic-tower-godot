@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://1lllgxbv2aly"]
+
+[ext_resource type="Script" uid="uid://c1g2j51ru40cd" path="res://npc/ui/virtual_controls.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://cuxuy6fnp6ge0" path="res://images/up.png" id="2_texture"]
+
+[node name="VirtualControls" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_script")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Up" type="TouchScreenButton" parent="Control"]
+position = Vector2(622, 243)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("2_texture")
+passby_press = true
+action = "ui_up"
+
+[node name="Down" type="TouchScreenButton" parent="Control"]
+position = Vector2(688, 395)
+rotation = 3.14159
+scale = Vector2(2, 2)
+texture_normal = ExtResource("2_texture")
+passby_press = true
+action = "ui_down"
+
+[node name="Left" type="TouchScreenButton" parent="Control"]
+position = Vector2(579, 352)
+rotation = 4.71239
+scale = Vector2(2, 2)
+texture_normal = ExtResource("2_texture")
+passby_press = true
+action = "ui_left"
+
+[node name="Right" type="TouchScreenButton" parent="Control"]
+position = Vector2(733, 288)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture_normal = ExtResource("2_texture")
+passby_press = true
+action = "ui_right"

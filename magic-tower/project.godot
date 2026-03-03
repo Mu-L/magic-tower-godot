@@ -22,9 +22,13 @@ HUD="*res://hud.tscn"
 
 [display]
 
-window/size/viewport_width=576
+window/size/viewport_width=736
 window/size/viewport_height=416
 window/stretch/mode="canvas_items"
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
