@@ -20,6 +20,40 @@ func _ready():
 	#if virtual_controls_scene:
 		#var virtual_controls = virtual_controls_scene.instantiate()
 		#add_child(virtual_controls)
+	# Setup HUD buttons animation
+	_setup_hud_buttons()
+
+func _setup_hud_buttons():
+	var containers = [
+		$Control/VBoxContainer/HBoxContainer9,
+		$Control/VBoxContainer/HBoxContainer10
+	]
+	
+	for container in containers:
+		if container:
+			for child in container.get_children():
+				if child is TextureButton:
+					_setup_texture_button(child)
+
+func _setup_texture_button(btn: TextureButton):
+	# Wait for layout to determine size
+	btn.pivot_offset = btn.size / 2.0
+	# Update pivot if size changes (e.g. layout update)
+	btn.resized.connect(func(): btn.pivot_offset = btn.size / 2.0)
+	
+	btn.button_down.connect(func(): _animate_texture_button(btn, Vector2(0.8, 0.8)))
+	btn.button_up.connect(func(): _animate_texture_button(btn, Vector2(1.0, 1.0)))
+	# Handle case where button is released outside
+	btn.mouse_exited.connect(func(): 
+		if btn.button_pressed: # If it was pressed
+			_animate_texture_button(btn, Vector2(1.0, 1.0))
+	)
+
+func _animate_texture_button(btn: TextureButton, target_scale: Vector2):
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_CUBIC)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(btn, "scale", target_scale, 0.1)
 	
 func _process(_delta):
 	# 动态调整当前场景的位置，使其不被 HUD 遮挡
