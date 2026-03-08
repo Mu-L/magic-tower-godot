@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=2 format=3 uid="uid://quonwly4b6mc"]
 
-[ext_resource type="Script" path="res://npc/ui/quick_shop_ui.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://xvkulpq6jejc" path="res://npc/ui/quick_shop_ui.gd" id="1_script"]
 
 [node name="QuickShopUI" type="CanvasLayer"]
 layer = 101

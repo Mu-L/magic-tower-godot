@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://ey4tydsqvhdl"]
 
-[ext_resource type="Script" uid="uid://e1f2a3b4c5d6e" path="res://npc/ui/shop_key_ui.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://g3fqchx67it2" path="res://npc/ui/shop_key_ui.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://crb5nkjmv4o77" path="res://images/npcs.png" id="2_npc_icon"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]

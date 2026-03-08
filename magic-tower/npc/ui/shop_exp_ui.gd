@@ -56,11 +56,11 @@ func update_selection():
 func handle_selection():
 	match current_index:
 		0: # Level +1 (100 Exp)
-			buy_stat("level", 1, 100)
+			buy_stat("level", 3, 270)
 		1: # ATK +5 (30 Exp)
-			buy_stat("atk", 5, 30)
+			buy_stat("atk", 17, 95)
 		2: # DEF +5 (30 Exp)
-			buy_stat("def", 5, 30)
+			buy_stat("def", 17, 95)
 		3: # Exit
 			close_shop()
 
@@ -71,9 +71,9 @@ func buy_stat(stat_name: String, amount: int, cost: int):
 			"level": 
 				player.level += amount
 				# 通常魔塔中升级也会增加其他属性，这里仅按照用户要求增加等级
-				player.hp += 1000 # 习惯性给点生命奖励，可根据需要删除
-				player.atk += 7
-				player.def += 7
+				player.hp += 3000 # 习惯性给点生命奖励，可根据需要删除
+				player.atk += 21
+				player.def += 21
 			"atk": player.atk += amount
 			"def": player.def += amount
 		

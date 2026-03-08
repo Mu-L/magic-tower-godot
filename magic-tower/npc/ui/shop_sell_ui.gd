@@ -71,15 +71,22 @@ func handle_selection():
 
 func sell_key(key_type: String, price: int):
 	var key_count = 0
-	if key_type in player:
-		key_count = player.get(key_type)
-	
+	if key_type == "yellow_keys" :
+		if player.key_yellow > 0 :
+			player.gold += price
+			player.key_yellow=player.key_yellow-1
+			key_count = 1 
+	if key_type == "blue_keys" :
+		if player.key_blue > 0 :
+			player.gold += price
+			player.key_blue=player.key_blue-1
+			key_count = 1 
+	if key_type == "red_keys" :
+		if player.key_red > 0 :
+			player.gold += price
+			player.key_red=player.key_red-1
+			key_count = 1 
 	if key_count > 0:
-		# 扣除钥匙
-		player.set(key_type, key_count - 1)
-		# 增加金币
-		player.gold += price
-		
 		# 更新全局状态
 		Global.save_player_state(player)
 		print("卖出成功: ", key_type, " 获得金币: ", price)
@@ -87,7 +94,6 @@ func sell_key(key_type: String, price: int):
 		print("钥匙不足，无法出售！")
 
 func close_shop():
-	if player:
-		player.is_talking = false
+	player.is_talking = false
 	emit_signal("shop_closed")
 	queue_free()

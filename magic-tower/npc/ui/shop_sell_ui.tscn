@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3m7n8pap0q1r"]
+[gd_scene load_steps=6 format=3 uid="uid://d3m7n8pap0q1r"]
 
-[ext_resource type="Script" uid="uid://dg3h4j5k6l7m8" path="res://npc/ui/shop_sell_ui.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://cc0vb3jaog4hj" path="res://npc/ui/shop_sell_ui.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://crb5nkjmv4o77" path="res://images/npcs.png" id="2_npc_icon"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
@@ -30,14 +30,6 @@ expand_margin_left = 10.0
 expand_margin_top = 2.0
 expand_margin_right = 10.0
 expand_margin_bottom = 2.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_icon_bg"]
-bg_color = Color(0.1, 0.1, 0.1, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
 
 [node name="ShopSellUI" type="CanvasLayer"]
 script = ExtResource("1_script")
@@ -83,25 +75,17 @@ theme_override_font_sizes/font_size = 18
 text = "神秘老人"
 horizontal_alignment = 1
 
-[node name="IconBG" type="Panel" parent="Control/Panel"]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 50.0
-offset_right = 60.0
-offset_bottom = 90.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_icon_bg")
-
-[node name="Icon" type="TextureRect" parent="Control/Panel/IconBG"]
+[node name="Icon" type="TextureRect" parent="Control/Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -16.0
-offset_top = -16.0
-offset_right = 16.0
-offset_bottom = 16.0
+offset_left = -116.0
+offset_top = -96.0
+offset_right = -84.0
+offset_bottom = -64.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_old_man")
@@ -139,12 +123,14 @@ text = "黄钥匙 (7金币)"
 horizontal_alignment = 1
 
 [node name="SelectionRect" type="Panel" parent="Control/Panel/VBoxContainer/YellowKey"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_selection")
 
 [node name="BlueKey" type="Label" parent="Control/Panel/VBoxContainer"]
@@ -161,6 +147,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_selection")
 
 [node name="RedKey" type="Label" parent="Control/Panel/VBoxContainer"]
@@ -177,6 +164,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_selection")
 
 [node name="Exit" type="Label" parent="Control/Panel/VBoxContainer"]
@@ -193,4 +181,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_selection")
