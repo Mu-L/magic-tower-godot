@@ -37,14 +37,14 @@ func interact(player):
 		return
 		
 	if target_scene == "" or target_scene == null:
-		print("目标场景未设置")
+		Global.show_message("目标场景未设置")
 		return
 	
 	# 切换楼层时锁定玩家移动，防止在切换瞬间发生穿墙
 	if player and "is_talking" in player:
 		player.is_talking = true
 	
-	print("切换楼层到: ", target_scene)
+	print("切换楼层到: " + target_scene)
 	Global.play_sound("res://sounds/floor.mp3")
 	# 切换前保存玩家状态
 	Global.save_player_state(player)

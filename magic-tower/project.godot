@@ -23,6 +23,7 @@ config/icon="res://icon.svg"
 
 Global="*res://Global.gd"
 HUD="*res://hud.tscn"
+FloatingMessageManager="*res://ui/FloatingMessageManager.gd"
 
 [display]
 

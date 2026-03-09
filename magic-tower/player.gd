@@ -96,10 +96,11 @@ func take_damage(amount: int):
 	hp -= amount
 	if hp <= 0:
 		hp = 0
-		print("Game Over")
+		Global.show_message("Game Over")
 
 # 获得奖励函数
 func add_rewards(g: int, e: int):
 	gold += g
 	experience += e
-	print("获得金币: %d, 经验: %d" % [g, e])
+	var msg = "获得金币: %d, 经验: %d" % [g, e]
+	Global.show_message(msg)

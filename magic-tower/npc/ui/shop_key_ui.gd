@@ -74,9 +74,9 @@ func buy_key(key_type: String, cost: int):
 		
 		# 更新全局状态
 		Global.save_player_state(player)
-		print("钥匙购买成功: ", key_type, " 钥匙")
+		Global.show_message("钥匙购买成功: " + key_type + " 钥匙")
 	else:
-		print("金币不足！")
+		Global.show_message("金币不足！")
 
 func close_shop():
 	player.is_talking = false

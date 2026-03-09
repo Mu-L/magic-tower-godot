@@ -106,11 +106,13 @@ func interact(player) -> void:
 	var expected_damage = get_expected_damage(p_atk, p_def, p_hp)
 	
 	if expected_damage == -1:
-		print("无法击败 " + enemy_name + " (无法破防)")
+		var msg = "无法击败 " +enemy_name +" (无法破防)"
+		Global.show_message(msg)
 		return
 		
 	if p_hp <= expected_damage:
-		print("无法击败 " + enemy_name + " (生命值不足)")
+		var msg = "无法击败 " +enemy_name +" (生命值不足)"
+		Global.show_message(msg)
 		return
 		
 	# 执行战斗结算

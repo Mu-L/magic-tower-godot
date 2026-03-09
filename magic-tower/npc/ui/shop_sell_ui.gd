@@ -89,9 +89,10 @@ func sell_key(key_type: String, price: int):
 	if key_count > 0:
 		# 更新全局状态
 		Global.save_player_state(player)
-		print("卖出成功: ", key_type, " 获得金币: ", price)
+		var msg = "卖出成功: " + key_type + " 获得金币: " + str(price)
+		Global.show_message(msg)
 	else:
-		print("钥匙不足，无法出售！")
+		Global.show_message("钥匙不足，无法出售！")
 
 func close_shop():
 	player.is_talking = false

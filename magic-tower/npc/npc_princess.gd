@@ -38,7 +38,7 @@ func start_quest_dialogue(player):
 	get_tree().root.add_child(ui)
 	ui.dialogue_finished.connect(func(): 
 		Global.princess_dialogue_finished = true
-		print("公主对话结束，开启18层楼梯")
+		Global.show_message("公主对话结束，开启18层楼梯")
 		# 通知当前场景更新楼梯可见性
 		var current_map = get_tree().current_scene
 		if current_map and current_map.name == "Map18":

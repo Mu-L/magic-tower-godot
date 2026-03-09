@@ -6,7 +6,7 @@ func interact(player):
 	var old_hp = player.hp
 	player.hp *= 2
 	
-	print("获得圣水：生命值从 %d 变为 %d" % [old_hp, player.hp])
+	Global.show_message("获得圣水：生命值从 %d 变为 %d" % [old_hp, player.hp])
 	
 	# 登记为已拾取
 	Global.register_defeated(self)

@@ -60,11 +60,11 @@ func handle_selection():
 				player.experience -= 500
 				player.atk += 120
 				Global.save_player_state(player)
-				print("交易成功：500经验换取120攻击力")
+				Global.show_message("交易成功：500经验换取120攻击力")
 				emit_signal("trade_completed")
 				close_shop()
 			else:
-				print("经验不足，无法交换！")
+				Global.show_message("经验不足，无法交换！")
 		1: # 谢谢，不用
 			close_shop()
 

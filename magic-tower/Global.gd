@@ -45,6 +45,13 @@ var should_restore_pos: bool = false
 var bgm_player: AudioStreamPlayer
 var sfx_volume_db: float = 0.0
 
+func show_message(text: String):
+	print(text)
+	# 使用 call_deferred 确保在当前帧逻辑完成后显示，或者直接调用
+	# 检查 FloatingMessageManager 是否存在（它是 Autoload）
+	if has_node("/root/FloatingMessageManager"):
+		get_node("/root/FloatingMessageManager").show_message(text)
+
 func _ready():
 	# 初始化全局 BGM 播放器
 	bgm_player = AudioStreamPlayer.new()
@@ -79,7 +86,7 @@ func register_defeated(node: Node):
 	if not node: return
 	var key = _get_node_key(node)
 	defeated_objects[key] = true
-	print("记录击败: ", key)
+	# show_message("记录击败: " + key) # Optional, might be spammy
 
 func is_defeated(node: Node) -> bool:
 	if not node: return false
@@ -198,7 +205,7 @@ func unlock_floor(f_name: String):
 		unlocked_floors.append(f_name)
 		# 排序以保持整洁（可选）
 		unlocked_floors.sort_custom(func(a, b): return a.to_int() < b.to_int())
-		print("解锁楼层: ", f_name)
+		show_message("解锁楼层: " + f_name)
 
 # --- 存档系统 ---
 const SAVE_PATH_TEMPLATE = "user://save_slot_%d.dat"
@@ -209,7 +216,7 @@ func can_save() -> bool:
 
 func save_game(slot_id: int):
 	if not can_save():
-		print("当前楼层禁止存档")
+		show_message("当前楼层禁止存档")
 		return
 		
 	# 先保存玩家状态
@@ -253,7 +260,7 @@ func save_game(slot_id: int):
 	if file:
 		file.store_var(save_data)
 		file.close()
-		print("游戏已保存到槽位: ", slot_id)
+		print("游戏已保存到槽位: " + str(slot_id))
 
 func load_game(slot_id: int):
 	var path = SAVE_PATH_TEMPLATE % slot_id

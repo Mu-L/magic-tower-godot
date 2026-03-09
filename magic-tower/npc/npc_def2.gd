@@ -23,7 +23,7 @@ func interact(player):
 	# 连接交易完成信号
 	shop_instance.trade_completed.connect(_on_trade_completed)
 	
-	print("与神秘老人对话：500经验换120防御力")
+	Global.show_message("与神秘老人对话：500经验换120防御力")
 
 func _on_trade_completed():
 	# 登记为已拾取/消失

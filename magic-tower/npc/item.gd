@@ -44,7 +44,7 @@ func interact(player):
 	if key_yellow > 0: msg += "黄钥匙+%d " % key_yellow
 	if key_blue > 0: msg += "蓝钥匙+%d " % key_blue
 	if key_red > 0: msg += "红钥匙+%d " % key_red
-	print(msg)
+	Global.show_message(msg)
 	
 	# 登记为已拾取
 	Global.register_defeated(self)

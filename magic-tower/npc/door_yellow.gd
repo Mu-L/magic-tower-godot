@@ -29,7 +29,7 @@ func interact(player):
 		use_key(player)
 		open_door()
 	else:
-		print("没有对应的钥匙！需要: ", KeyType.keys()[required_key])
+		Global.show_message("没有对应的钥匙！需要: " + KeyType.keys()[required_key])
 
 # 检查玩家是否有对应的钥匙
 func has_key(player) -> bool:

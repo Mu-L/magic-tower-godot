@@ -121,7 +121,7 @@ func end_dialogue(player):
 	player.key_yellow += 1
 	player.key_blue += 1
 	player.key_red += 1
-	print("获得奖励：黄钥匙x1, 蓝钥匙x1, 红钥匙x1")
+	Global.show_message("获得奖励：黄钥匙x1, 蓝钥匙x1, 红钥匙x1")
 	
 	# 向左移动 32px 的平滑动画
 	var tween = create_tween()

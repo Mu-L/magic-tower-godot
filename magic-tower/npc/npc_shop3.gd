@@ -20,4 +20,4 @@ func interact(player):
 	shop_instance.player = player
 	get_tree().root.add_child(shop_instance)
 	
-	print("打开钥匙商店")
+	Global.show_message("打开钥匙商店")

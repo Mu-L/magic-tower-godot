@@ -79,9 +79,9 @@ func buy_stat(stat_name: String, amount: int, cost: int):
 		
 		# 更新全局状态
 		Global.save_player_state(player)
-		print("经验购买成功: ", stat_name, "+", amount)
+		Global.show_message("经验购买成功: " + stat_name + "+" + str(amount))
 	else:
-		print("经验不足！")
+		Global.show_message("经验不足！")
 
 func close_shop():
 	player.is_talking = false

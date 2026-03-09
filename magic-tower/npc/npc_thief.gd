@@ -81,7 +81,7 @@ func start_stage_1_complete(player):
 		Global.has_pickaxe = false # 消耗掉锄头
 		Global.register_defeated(self)
 		queue_free()
-		print("18层通路已开启，杰克已前往18层")
+		Global.show_message("18层通路已开启，杰克已前往18层")
 	)
 
 func start_stage_2(player):

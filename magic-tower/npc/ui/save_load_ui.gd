@@ -64,7 +64,7 @@ func _on_slot_pressed(index_on_page: int):
 		
 		# 检查是否允许存档
 		if not Global.can_save():
-			print("当前楼层无法存档！")
+			Global.show_message("当前楼层无法存档！")
 			return
 		
 		# 隐藏界面以抓取干净的截图
@@ -77,7 +77,7 @@ func _on_slot_pressed(index_on_page: int):
 		if Global.load_game(slot_id):
 			queue_free()
 		else:
-			print("加载失败，存档可能不存在")
+			Global.show_message("加载失败，存档可能不存在")
 
 func _on_prev_page_pressed():
 	if current_page > 0:
