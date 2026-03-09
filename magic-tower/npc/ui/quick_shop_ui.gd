@@ -53,18 +53,17 @@ func setup_buttons():
 	btn_container.add_child(back_btn)
 
 func _on_shop_btn_pressed(shop_info):
-	# 关闭快捷商店界面
-	_on_close_pressed()
-	
-	# 延迟实例化目标商店 UI，确保上一个 UI 已完全移除且 player.is_talking 状态正确
-	await get_tree().process_frame
-	
 	if player:
 		player.is_talking = true
 		var shop_scene = load(shop_info.scene)
 		var shop_instance = shop_scene.instantiate()
 		shop_instance.player = player
 		get_tree().root.add_child(shop_instance)
+		
+	# 关闭快捷商店界面
+	_on_close_pressed()
+	
+
 
 func _on_close_pressed():
 	if player:
