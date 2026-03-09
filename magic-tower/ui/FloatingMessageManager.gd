@@ -6,23 +6,18 @@ func show_message(text: String):
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	
-	# Add shadow for better visibility
-	label.add_theme_color_override("font_shadow_color", Color.BLACK)
-	label.add_theme_constant_override("shadow_offset_x", 1)
-	label.add_theme_constant_override("shadow_offset_y", 1)
+	# Add outline and shadow for better visibility
+	label.add_theme_constant_override("outline_size", 4)
+	label.add_theme_color_override("outline_color", Color.BLACK)
 	label.add_theme_font_size_override("font_size", 24) 
 	
 	add_child(label)
 	
-	# Position: Top Center
-	# Using anchors and grow direction to center it
-	label.grow_horizontal = Control.GROW_DIRECTION_BOTH
-	
-	# Get viewport size
-	var viewport_size = get_viewport().get_visible_rect().size
-	
-	# Start position (Top Center, slightly down)
-	label.position = Vector2(viewport_size.x / 2, 80)
+	# Position: Full width, top center
+	label.anchors_preset = Control.PRESET_TOP_WIDE
+	label.position.y = 80
+	# Ensure width covers the screen so horizontal_alignment centers the text
+	# PRESET_TOP_WIDE sets anchors to (0,0,1,0) which is full width.
 	
 	# Animate
 	var tween = create_tween()
