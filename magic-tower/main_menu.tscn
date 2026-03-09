@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cikw4vj4xptxd"]
+[gd_scene format=3 uid="uid://cikw4vj4xptxd"]
 
 [ext_resource type="Script" uid="uid://cgdn18nfe1xtb" path="res://main_menu.gd" id="1_script"]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=1625931323]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_script")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=575851368]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,7 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.05, 0.05, 0.05, 1)
 
-[node name="Title" type="Label" parent="."]
+[node name="Title" type="Label" parent="." unique_id=1072813149]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -35,7 +35,7 @@ text = "魔塔 Magic Tower"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1186795565]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -50,22 +50,22 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
 
-[node name="BtnStart" type="Button" parent="VBoxContainer"]
+[node name="BtnStart" type="Button" parent="VBoxContainer" unique_id=844830719]
 custom_minimum_size = Vector2(0, 45)
 layout_mode = 2
 text = "开始游戏"
 
-[node name="BtnLoad" type="Button" parent="VBoxContainer"]
+[node name="BtnLoad" type="Button" parent="VBoxContainer" unique_id=1294709059]
 custom_minimum_size = Vector2(0, 45)
 layout_mode = 2
 text = "加载游戏"
 
-[node name="BtnAbout" type="Button" parent="VBoxContainer"]
+[node name="BtnAbout" type="Button" parent="VBoxContainer" unique_id=2015394276]
 custom_minimum_size = Vector2(0, 45)
 layout_mode = 2
 text = "关于"
 
-[node name="BtnExit" type="Button" parent="VBoxContainer"]
+[node name="BtnExit" type="Button" parent="VBoxContainer" unique_id=2066893550]
 custom_minimum_size = Vector2(0, 45)
 layout_mode = 2
 text = "退出游戏"
